@@ -19,7 +19,7 @@
     </div>
 
     <div class="adicionar-cliente" id="adicionar-cliente">
-        <form action="{% url 'clientes' %}" method="POST"> {% csrf_token %} <!--alterado conforme mostra no video-->
+        <form action="{% url 'clientes' %}" method="POST">{% csrf_token %} <!--alterado conforme mostra no video-->
             <div class="row">
                 <div class="col-md">
                     <p>Nome:</p>
@@ -70,9 +70,10 @@
 
     </div>
 
+
     <div id="att_cliente" class="att_cliente">
         <p>Clientes:</p>
-        <select class="form-control">
+        <select id="cliente-select" onchange="dados_cliente()" class="form-control">
             {% for cliente in clientes %}
             <option value="{{cliente.id}}">{{cliente.nome}}</option>
             {% endfor %}

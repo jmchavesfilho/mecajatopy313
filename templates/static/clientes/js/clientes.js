@@ -42,8 +42,22 @@ function dados_cliente() {
         return result.json()
     }).then(function (data) {
 
-        console.log(data)
+        document.getElementById('form-att-cliente').style.display = 'block'
+
+        nome = document.getElementById('nome')
+        nome.value = data['nome']
+
+        sobrenome = document.getElementById('sobrenome')
+        sobrenome.value = data['sobrenome']
+
+        cpf = document.getElementById('cpf')
+        cpf.value = data['cpf']
+
+        email = document.getElementById('email')
+        email.value = data['email']
+
     })
 }
 
 //video parado no minuto 40:40 24/10/2024
+//iniciar a aula 03

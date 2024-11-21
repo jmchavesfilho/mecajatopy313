@@ -74,14 +74,15 @@
     <div id="att_cliente" class="att_cliente">
         <p>Clientes:</p>
         <select id="cliente-select" onchange="dados_cliente()" class="form-control">
+            <option value=""></option>
             {% for cliente in clientes %}
             <option value="{{cliente.id}}">{{cliente.nome}}</option>
             {% endfor %}
         </select>
         <br>
         <hr>
-
         <div id="form-att-cliente">
+            <input type="hidden" id="id">
             <p>Nome:</p>
             <input id="nome" type="text" class='form-control'>
             <p>Sobrenome:</p>
@@ -90,8 +91,14 @@
             <input id="email" type="text" class='form-control'>
             <p>CPF:</p>
             <input id="cpf" type="text" class='form-control'>
-        </div>
+            <br>
+            <input onclick="update_cliente()" type="submit" value="salvar" class="btn btn-success">
+            <hr style="background-color: gray;">
+            <h3>Carros</h3>
 
-    </div>
-    <script src="{% static 'clientes/js/clientes.js' %}"></script>
-    {% endblock %}
+            <div id="carros">
+            </div>
+
+        </div>
+        <script src="{% static 'clientes/js/clientes.js' %}"></script>
+        {% endblock %}

@@ -107,3 +107,5 @@ def update_cliente(request, id):
         return JsonResponse({'status':'200', 'nome': nome, 'sobrenome': sobrenome, 'email': email, 'cpf':cpf})
     except:
         return JsonResponse({'status': '500'})
+    
+    #aula 5 parado minuto 20:45

@@ -6,9 +6,12 @@ class FormServico(ModelForm):
         model = Servico
         exclude = ['finalizado', 'protocolo']
 
-    def _init_(self, *args, **kwargs):
-        super()._init_(*args, **kwargs)     
-        print(self.fields['titulo'].widget.att)
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)     
+        for field in self.fields:
+            self.fields[field].widget.attrs.update({'class': 'form-control'})
+            self.fields[field].widget.attrs.update({'placeholder': field})
+        
 
 
 
